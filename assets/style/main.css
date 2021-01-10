@@ -10699,4 +10699,12 @@ main {
   height: 58vh;
 }
 
+.hidden {
+  display: none;
+}
+
+.hovering:hover + .hidden {
+  display: inline;
+}
+
 /*# sourceMappingURL=main.css.map */

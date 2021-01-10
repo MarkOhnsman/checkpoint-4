@@ -5,10 +5,11 @@ export default class Quote {
     this.author = data.quote.author
   }
 
+  // https://www.w3schools.com/howto/howto_css_display_element_hover.asp
   get Template() {
     return /*html*/`
-    <p>${this.quote}</p>
-    <p>- ${this.author}</p>
+    <p class="hovering">${this.quote}</p>
+    <p class="hidden">- ${this.author}</p>
     `
   }
 }
