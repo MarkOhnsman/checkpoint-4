@@ -20,12 +20,21 @@
             <h1 class="offset-4 col-4 bg-danger d-flex justify-content-center align-items-center" id="time">
                 <script src="app/Time.js"></script>
             </h1>
-            <div class="col-4">Unsure if putting task list here yet</div>
+            <div class="col-4 bg-info">
+                <h3 class="text-center">Task Items</h3>
+                <div id="listItems">testing</div>
+                <form onsubmit="app.todoController.addTodo()" class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="title" id="title" placeholder="New Item"
+                            minlength="1" maxlength="40" required>
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="row">
             <div class="offset-4 col-4 bg-info" id="quote"></div>
-            <div class="col-4" id="list">Insert modal here? List cannot go here if not in a modal, not enough space
-            </div>
+        </div>
         </div>
     </main>
 
