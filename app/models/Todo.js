@@ -1,27 +1,20 @@
-import { generateId } from "../Utils/GenerateId.js"
 import { ProxyState } from "../AppState.js"
 
 export default class Todo {
   constructor(data) {
     console.log('[RAW todo API DATA]', data);
-    this.checkbox = data.checkbox || false
-    this.title = data.title
-    this.id = data.id || generateId();
+    this.checkbox = data.completed || false
+    this.description = data.description
+    this.id = data._id
+    this.user = data.user
   }
 
   get Template() {
 
     return /*html*/`
-      <div class="row">
-       ${this.title}
-      </div>
+      ${this.description} - ${this.checkbox} - ${this.id} - ${this.user}
         `
   }
 
-  get Items() {
-    let template = ""
-    let items = ProxyState.todos.filter(t => t.id == this.id)
-    items.forEach(t => template += t.Template)
-    return template
-  }
+
 }

@@ -6,14 +6,14 @@ let url = 'jordan/todos/'
 
 class TodoService {
   async getTodos() {
-    console.log("Getting the Todo List");
     let res = await api.get(url);
     ProxyState.todos = res.data.map(s => new Todo(s))
   }
 
   async addTodo(todo) {
-    let res = await api.post(url, todo);
-    ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
+    await api.post(url, todo);
+    // ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
+    this.getTodos()
   }
 
   async toggleTodoStatus(id) {

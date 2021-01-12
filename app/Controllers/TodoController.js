@@ -15,6 +15,7 @@ export default class TodoController {
     this.getTodos();
   }
 
+  // getTodos is GOOD for now
   getTodos() {
     console.log("Calling 'getTodos' the 1st time in the Controller")
     try {
@@ -23,13 +24,16 @@ export default class TodoController {
       console.error(error)
     }
   }
+
+
   addTodo() {
     window.event.preventDefault()
     let form = window.event.target
     //TODO build the todo object from the data that comes into this method
+    console.log("addTodo in the controller")
     let todo = {
       // @ts-ignore
-      title: form.title.value
+      description: form.title.value
     };
 
     try {
@@ -39,11 +43,14 @@ export default class TodoController {
     }
   }
 
+  // This is maybe good??
   /**
  * This method takes in an id of the Todo that should be togggled as complete
  * @param {string} todoId 
  */
   toggleTodoStatus(todoId) {
+    console.log('toggle')
+    console.log(todoId)
     try {
       todoService.toggleTodoStatus(todoId);
     } catch (error) {
@@ -51,6 +58,7 @@ export default class TodoController {
     }
   }
 
+  // this below is GOOD for now
   /**
    * This method takes in an id of the Todo that should be removed
    * @param {string} todoId 
