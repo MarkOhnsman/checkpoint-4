@@ -9,14 +9,6 @@ class WeatherService {
     ProxyState.weather = new Weather(res.data);
   }
 
-  // FtoC() {
-  //   if (this.fahrenheit) {
-  //     return this.celsius
-  //   } else {
-  //     return this.fahrenheit
-  //   }
-
-  // }
 }
 
 const weatherService = new WeatherService();

@@ -16,7 +16,7 @@ export default class Weather {
 
   get Template() {
     return /*html*/`
-    <p>${this.fahrenheit}</p>
+    <p id="weather" onClick="${!this.fahrenheit ? this.celsius : ''}">${this.fahrenheit}</p>
     <p>${this.city}</p>
     `
   }
