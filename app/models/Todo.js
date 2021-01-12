@@ -2,16 +2,20 @@
 export default class Todo {
   constructor(data) {
     console.log('[RAW todo API DATA]', data);
-    this.checkbox = data.completed || false
+    this.checkbox = data.completed
     this.description = data.description
-    this.id = data._id
+    this.id = data.id
     this.user = data.user
   }
 
   get Template() {
 
     return /*html*/`
-      ${this.description} - ${this.checkbox} - ${this.id} - ${this.user}
+    <div class="row">
+<input type="checkbox" onclick="app.todoController.toggleTodoStatus('${this.id}')" id="${this.id}">
+  <label> ${this.description}</label>
+  <i class="fa fa-trash text-danger" onclick="app.todoController.removeTodo('${this.id}')"></i>
+  </div>
         `
 
     // FIXME this would need a template that includes the checkbox input, something like this: 
@@ -25,6 +29,5 @@ export default class Todo {
     // OR
     // with a turnary in the original string such as ${ this.completed ? 'checked' : '' } which would use the template above and only add the attribute if completed was true.
   }
-
 
 }

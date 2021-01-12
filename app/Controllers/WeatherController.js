@@ -24,4 +24,14 @@ export default class WeatherController {
       console.error(e)
     }
   }
+
+  toggleShowFahrenheit() {
+    try {
+      weatherService.toggleShowFahrenheit()
+      drawWeather()
+      console.log("testing toggleShowFahrenheit in Controller", ProxyState.weather.showFahrenheit)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }

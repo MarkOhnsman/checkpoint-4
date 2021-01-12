@@ -52,10 +52,9 @@ export default class TodoController {
  * @param {string} todoId 
  */
   toggleTodoStatus(todoId) {
-    console.log('toggle')
-    console.log(todoId)
     try {
       todoService.toggleTodoStatus(todoId);
+      console.log(todoId)
     } catch (error) {
       console.error(error)
     }
@@ -69,6 +68,7 @@ export default class TodoController {
   removeTodo(todoId) {
     try {
       todoService.removeTodo(todoId);
+      console.log(todoId)
     } catch (error) {
       console.error(error)
     }
