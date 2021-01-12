@@ -6,7 +6,7 @@ import weatherService from "../Services/WeatherService.js";
 
 //TODO Complete rendering data to the screen
 function drawWeather() {
-  console.log("THE WEATHER MAN SAYS:", ProxyState.weather);
+  // console.log("THE WEATHER MAN SAYS:", ProxyState.weather);
 
   document.getElementById("weather").innerHTML = ProxyState.weather.Template
 }

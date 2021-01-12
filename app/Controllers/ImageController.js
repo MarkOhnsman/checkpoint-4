@@ -4,9 +4,10 @@ import imageService from "../Services/ImageService.js";
 //      (you may wish to set it as a background image: https://www.w3schools.com/JSREF/prop_style_backgroundimage.asp)
 
 function drawImage() {
-  console.log("The DAILY PICTURE IS: ", ProxyState.image);
+  // console.log("The DAILY PICTURE IS: ", ProxyState.image);
 
-  document.body.style.backgroundImage = ProxyState.image.Template
+  document.body.style.backgroundImage = `url(${ProxyState.image.image})`
+  // document.getElementById("image").style
 }
 
 export default class ImageController {

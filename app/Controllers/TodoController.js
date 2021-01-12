@@ -3,21 +3,20 @@ import todoService from "../Services/TodoService.js";
 
 //TODO Create the draw function
 function _drawTodos() {
-  let template = ''
-  ProxyState.todos.forEach(todo => {
-    template += `<li class="action" onclick="app.todoController.getTodos('${todo.id}')">${todo.title}</li>`
-  })
-  document.getElementById('listItems').innerHTML = template
+  console.log("THE DAILY todos IS: ", ProxyState.todos);
+  let template = ""
+  ProxyState.todos.forEach(p => template += p.Template)
+  document.getElementById("listItems").innerHTML = template
 }
 
 export default class TodoController {
   constructor() {
     ProxyState.on('todos', _drawTodos)
-
-    todoService.getTodos();
+    this.getTodos();
   }
 
   getTodos() {
+    console.log("Calling 'getTodos' the 1st time in the Controller")
     try {
       todoService.getTodos()
     } catch (error) {
@@ -26,10 +25,10 @@ export default class TodoController {
   }
   addTodo() {
     window.event.preventDefault()
-    // e.preventDefault();
     let form = window.event.target
     //TODO build the todo object from the data that comes into this method
     let todo = {
+      // @ts-ignore
       title: form.title.value
     };
 

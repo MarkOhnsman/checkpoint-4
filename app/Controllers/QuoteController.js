@@ -3,8 +3,7 @@ import quoteService from "../Services/QuoteService.js";
 //TODO Create methods for constructor, and rendering the quote to the page
 
 function drawQuote() {
-  console.log("THE DAILY QUOTE IS: ", ProxyState.quote);
-
+  // console.log("THE DAILY QUOTE IS: ", ProxyState.quote);
   document.getElementById("quote").innerHTML = ProxyState.quote.Template
 }
 

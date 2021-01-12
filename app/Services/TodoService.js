@@ -6,8 +6,8 @@ let url = 'jordan/todos/'
 
 class TodoService {
   async getTodos() {
-    let res = await api.get(url);
     console.log("Getting the Todo List");
+    let res = await api.get(url);
     ProxyState.todos = res.data.map(s => new Todo(s))
   }
 
