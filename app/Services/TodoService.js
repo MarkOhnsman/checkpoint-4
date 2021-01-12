@@ -8,6 +8,7 @@ class TodoService {
   async getTodos() {
     let res = await api.get(url);
     ProxyState.todos = res.data.map(s => new Todo(s))
+    console.log(ProxyState.todos)
   }
 
   async addTodo(todo) {
