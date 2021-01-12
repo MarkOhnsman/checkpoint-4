@@ -30,6 +30,7 @@ class TodoService {
     let res = await api.delete(url, todoId)
     //TODO Work through this one on your own
     //		what is the request type
+    // FIXME this line would need to be filter(s => s.id != todoId) so it utilizes the id passed in the parameters
     ProxyState.todos = ProxyState.todos.filter(s => s.id != ProxyState.todos.id)
     //		once the response comes back, how do you update the state
   }

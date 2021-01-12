@@ -7,6 +7,9 @@ function _drawTodos() {
   let template = ""
   ProxyState.todos.forEach(p => template += p.Template)
   document.getElementById("listItems").innerHTML = template
+
+  // FIXME 
+  // Here you would need to have added the template to show the remaining todos by injecting a "remaining todos: " + ProxyState.todos.filter(t => !t.completed ).length
 }
 
 export default class TodoController {
