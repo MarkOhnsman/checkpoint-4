@@ -12,7 +12,7 @@ export default class Weather {
     this.id = data.weather.id
     this.fahrenheit = Math.trunc((this.kelvin * 1.8) - 459.67);
     this.celsius = Math.trunc(this.kelvin - 273.15)
-    this.showFahrenheit = false
+    this.showFahrenheit = true
   }
 
 
